@@ -35,7 +35,7 @@ public class KPacSetController {
 
     @RequestMapping("/deleteKPacFromSet")
     public String deleteK_PacInSetById(@RequestParam("kPacId") int kPacId, Model model) {
-        k_pacSetService.deleteKPacFromSet(kPacId);
+        k_pacSetService.deleteKPacFromSet(kPacId,setId);
         List<K_Pac> k_PacksInSet = k_pacSetService.getKPacsFromSetById(setId);
         List<K_Pac> k_PacksWhichCanBeAdded = k_pacService.getAllK_Paces();
         k_PacksWhichCanBeAdded.removeAll(k_PacksInSet);

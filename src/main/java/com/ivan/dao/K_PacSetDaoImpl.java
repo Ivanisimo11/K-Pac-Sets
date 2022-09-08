@@ -26,7 +26,7 @@ public class K_PacSetDaoImpl implements K_PacSetDao{
 
     private final String SQL_FIND_K_PAC_AND_SET = "select * from k_pac_in_set where id_set = ?";
 //    private final String SQL_GET_ALL_K_PAC = "select * from k_pac where id_set = ?";
-    private final String SQL_DELETE_K_PAC = "delete from k_pac_in_set where id_k_pac = ?";
+    private final String SQL_DELETE_K_PAC = "delete from k_pac_in_set where id_k_pac = ? and id_set = ?";
     private final String SQL_GET_ALL = "select * from k_pac_set";
     private final String SQL_INSERT_K_PAC_IN_SET = "insert into k_pac_in_set(id_set, id_k_pac) values(?,?)";
 
@@ -49,8 +49,8 @@ public class K_PacSetDaoImpl implements K_PacSetDao{
     }
 
     @Override
-    public boolean deleteKPacFromSet(int id) {
-        return jdbcTemplate.update(SQL_DELETE_K_PAC, id) > 0;
+    public boolean deleteKPacFromSet(int id,int idSet) {
+        return jdbcTemplate.update(SQL_DELETE_K_PAC, id, idSet) > 0;
     }
 
     @Override

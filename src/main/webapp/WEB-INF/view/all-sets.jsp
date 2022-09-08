@@ -39,6 +39,9 @@
     </tr>
     </c:forEach>
 </table>
+<br><br>
+<input type="button" value="K-Packs"
+       onclick="window.location.href = '/kpacs'">
 </body>
 </html>
 

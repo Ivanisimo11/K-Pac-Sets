@@ -13,7 +13,8 @@ public class K_PacDAOImpl implements K_PacDAO {
     JdbcTemplate jdbcTemplate;
 
     private final String SQL_FIND_K_PAC = "select * from k_pac where id = ?";
-    private final String SQL_DELETE_K_PAC = "delete from k_pac where id = ?";
+    private final String SQL_DELETE_K_PAC = "delete from k_pac where id = ? ";
+    private final String SQL_DELETE_IN_K_PAC = "delete from k_pac_in_set where id_k_pac = ?";
     private final String SQL_UPDATE_K_PAC = "update k_pac set title = ?, description = ?, date_created = ? where id = ?";
     private final String SQL_GET_ALL = "select * from k_pac";
     private final String SQL_INSERT_K_PAC = "insert into k_pac(id, title, description, date_created) values(?,?,?,CURDATE())";
@@ -34,6 +35,7 @@ public class K_PacDAOImpl implements K_PacDAO {
 
     @Override
     public boolean deleteK_Pac(int id) {
+        jdbcTemplate.update(SQL_DELETE_IN_K_PAC, id);
         return jdbcTemplate.update(SQL_DELETE_K_PAC, id) > 0;
     }
 

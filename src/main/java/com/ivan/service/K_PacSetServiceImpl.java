@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class K_PacSetServiceImpl implements K_PacSetService{
+public class K_PacSetServiceImpl implements K_PacSetService {
     @Autowired
     K_PacSetDao k_pacSetDao;
 
@@ -22,8 +22,8 @@ public class K_PacSetServiceImpl implements K_PacSetService{
 
     @Override
     @Transactional
-    public boolean deleteKPacFromSet(int id) {
-        return k_pacSetDao.deleteKPacFromSet(id);
+    public boolean deleteKPacFromSet(int id, int idSet) {
+        return k_pacSetDao.deleteKPacFromSet(id, idSet);
     }
 
     @Override

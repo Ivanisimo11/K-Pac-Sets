@@ -8,7 +8,6 @@
 <body>
 <center><h3>K-Packs in this Set</h3></center>
 <table width="100%" border="1">
-
     <tr>
         <th>Title</th>
         <th>Description</th>
@@ -55,6 +54,9 @@
     </tr>
     </c:forEach>
 </table>
+<br><br>
+<input type="button" value="Sets"
+       onclick="window.location.href = '/sets'">
 </body>
 </html>
 

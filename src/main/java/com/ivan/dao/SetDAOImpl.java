@@ -15,6 +15,7 @@ public class SetDAOImpl implements SetDAO {
 
     private final String SQL_FIND_K_PAC = "select * from k_pac_set where id = ?";
     private final String SQL_DELETE_K_PAC = "delete from k_pac_set where id = ?";
+    private final String SQL_DELETE_IN_K_PAC = "delete from k_pac_in_set where id_set = ?";
     private final String SQL_GET_ALL = "select * from k_pac_set";
     private final String SQL_INSERT_K_PAC = "insert into k_pac_set(id, title) values(?,?)";
 
@@ -34,7 +35,9 @@ public class SetDAOImpl implements SetDAO {
 
     @Override
     public boolean deleteSet(int id) {
+        jdbcTemplate.update(SQL_DELETE_IN_K_PAC, id);
         return jdbcTemplate.update(SQL_DELETE_K_PAC, id) > 0;
+
     }
 
     @Override

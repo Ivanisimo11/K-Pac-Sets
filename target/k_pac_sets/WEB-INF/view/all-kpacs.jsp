@@ -44,6 +44,9 @@
     </tr>
     </c:forEach>
 </table>
+<br><br>
+<input type="button" value="Sets"
+       onclick="window.location.href = '/sets'">
 </body>
 </html>
 

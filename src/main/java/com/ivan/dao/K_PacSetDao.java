@@ -8,7 +8,7 @@ import java.util.List;
 public interface K_PacSetDao {
     List<K_Pac> getKPacsFromSetById(int id);
 
-    boolean deleteKPacFromSet(int id);
+    boolean deleteKPacFromSet(int id,int idSet);
 
     boolean addKPacToSet (K_PacSet k_pacSet);
 }
