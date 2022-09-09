@@ -4,7 +4,61 @@
 <html>
 <head>
     <title>All K-Paces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .table {
+        border-collapse: collapse;
+        border: 1px solid #000;
+    }
+
+    .table > tr {
+    }
+
+    .table tr + tr {
+        border-top: 0;
+    }
+
+    .table td, th {
+        border: 1px solid #000;
+        padding: 10px 20px;
+    }
+
+    .btn {
+        border: 0;
+        border-radius: 6px;
+        background-color: #40de68;
+        box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 10px 20px;
+        transition: all 0.3s;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 2px 2px 17px 7px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn__delete {
+        background-color: rgb(245, 0, 0);
+        color: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #60a7f7;
+    }
+</style>
+
 <body >
 
 
@@ -16,7 +70,8 @@
     Title <form:input path="title" cssStyle="margin-right: 30px"/>
     Description <form:input path="description" cssStyle="margin-right: 30px"/>
 
-    <input type="submit" value="Create K-PAC"/>
+    <button class="btn" type="submit">Create K-Pac</button>
+
 
 </form:form>
 <br><br>
@@ -38,15 +93,16 @@
         <td width="1000">${pac.description}</td>
         <td width="120">${pac.dateCreated}</td>
         <td>
-            <input type="button" value="Delete"
-                   onclick="window.location.href = '${deleteButton}'">
+            <button class="btn btn__delete" type="button"
+                    onclick="window.location.href = '${deleteButton}'">Delete
+            </button>
         </td>
     </tr>
     </c:forEach>
 </table>
 <br><br>
-<input type="button" value="Sets"
-       onclick="window.location.href = '/sets'">
+<button type="button" class="btn"
+        onclick="window.location.href = '/sets'">Sets</button>
 </body>
 </html>
 
